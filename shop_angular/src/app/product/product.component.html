@@ -1,0 +1,39 @@
+<h1>Shop </h1>
+<h2> Spring MVC application with Angular 8</h2>
+
+<div>
+    <form>
+        <input type="hidden" name="product.id"/>
+        Enter name: <input type="text" [(ngModel)] = "product.name" name = "name"><br/>
+        Enter category: <input type="text" [(ngModel)] = "product.category" name = "category"><br/>
+        Enter description: <input type="text" [(ngModel)] = "product.description" name = "description"><br/>
+        Enter price: <input type="text" [(ngModel)] = "product.price" name = "price"><br/>
+        <button (click) = "addProduct()"> Add Book </button>
+    </form>
+
+</div>
+<br/>
+<br/>
+<br/>
+<div>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr *ngFor = "let product of products">
+            <th>{{product.id}}</th>
+            <th>{{product.name}}</th>
+            <th>{{product.category}}</th>
+            <th>{{product.description}}</th>
+            <th>{{product.price}}</th>
+            <th><button (click)="getProductById(product.id)"> Update </button></th>
+            <th><button (click)="deleteProduct(product.id)"> Delete </button></th>
+        </tr>
+    </table>
+</div>
